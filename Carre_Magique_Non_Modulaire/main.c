@@ -23,10 +23,10 @@ int main()
 {
     tJeton Jeton={INIX,INIY};
     int Carre[TAILLE][TAILLE];
-    int nSteps=2;//On initialise les Steps à 2 car on positionne déjà le 1 lors de l'initialisation
+    int nSteps=2; //On commence le compte à 2 car le 1 déjà créé lors de l'initialisation
     init(Carre);
     affichage(Carre);
-    while (nSteps<=(TAILLE*TAILLE)){
+    while (nSteps<=((TAILLE-1)*(TAILLE-1))){
         avancer(&Jeton,Carre);
         placer(Jeton,Carre,nSteps);
         nSteps++;
@@ -114,11 +114,11 @@ SORTIES : Jeton avec coordonées avancée
 
 void avancer(tJeton *Jeton, int Carre[TAILLE][TAILLE]){
     avancerdroite(Jeton);
-    corriger(Jeton);//On corrige la coordonée de l'avancé à droite
-    if(IsEmpty(Jeton,Carre)==0) //Si la cellule est remplie
+    corriger(Jeton);
+    if(IsEmpty(Jeton,Carre)==0)
     {
         avancergauche(Jeton);
-        corriger(Jeton);//On corrige la coordonée de la nouvelle avancée à gauche
+        corriger(Jeton);
     }
 }
 
