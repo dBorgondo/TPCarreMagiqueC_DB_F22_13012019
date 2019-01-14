@@ -23,7 +23,7 @@ int main()
 {
     tJeton Jeton={INIX,INIY};
     int Carre[TAILLE][TAILLE];
-    int nSteps=2; //On commence le compte à 2 car le 1 déjà créé lors de l'initialisation
+    int nSteps=2;
     init(Carre);
     affichage(Carre);
     while (nSteps<=((TAILLE-1)*(TAILLE-1))){
